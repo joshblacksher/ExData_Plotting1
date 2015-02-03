@@ -1,3 +1,21 @@
 
- plot(d$datetime, d$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+plot(d$datetime, d$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+
+plot(d$datetime, d$Sub_metering_1, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+lines(d$datetime, d$Sub_metering_2, type="l", col="red")
+lines(d$datetime, d$Sub_metering_3, type="l", col="blue")
+legend("topright", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), lty=1)
+
+
+plot(d$datetime, d$Voltage, type="l", ylab="Voltage", xlab="datetime")
+
+
+plot(d$datetime, d$Global_reactive_power, type="l", ylab="Global_reactive_power", xlab="datetime")
+
+par(mfcol=c(2,2))
+
+source("./plot1.R")
+source("./plot2.R")
+source("./plot3.R")
+source("./plot4.R")
 
